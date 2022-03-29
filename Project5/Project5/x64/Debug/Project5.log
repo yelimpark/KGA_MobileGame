@@ -1,0 +1,7 @@
+﻿  main.c
+C:\Users\PYL\source\repos\Project5\Project5\main.c(51,12): warning C4098: 'Write': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\PYL\source\repos\Project5\Project5\main.c(67,12): warning C4098: 'Read': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\PYL\source\repos\Project5\Project5\main.c(94,12): warning C4098: 'MyStory': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\PYL\source\repos\Project5\Project5\main.c(122,12): warning C4098: 'MyStory2': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\PYL\source\repos\Project5\Project5\main.c(145,12): warning C4098: 'ShowMyStory': 'void' 함수에서 값을 반환하고 있습니다.
+  Project5.vcxproj -> C:\Users\PYL\source\repos\Project5\x64\Debug\Project5.exe
