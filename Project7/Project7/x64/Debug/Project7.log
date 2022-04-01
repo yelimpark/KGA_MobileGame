@@ -1,5 +1,0 @@
-﻿  game.c
-C:\Users\PYL\source\repos\Project7\Project7\game.c(7,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  main.c
-  코드를 생성하고 있습니다...
-  Project7.vcxproj -> C:\Users\PYL\source\repos\Project7\x64\Debug\Project7.exe
