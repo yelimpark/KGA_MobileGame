@@ -417,7 +417,7 @@ int lv4p3(void) {
 
 int main()
 {
-	//lv1p1();
+	lv1p1();
 	//lv1p2();
 	//lv1p3();
 	//lv1p4();
