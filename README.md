@@ -35,5 +35,13 @@ repository for 경일게임아카데미 모바일게임개발자양성과정
     <th><strong> Project 8 </strong></th>
     <td> <string.h> 함수 구현 </td>
   </tr>
+  <tr>
+    <th><strong> Project 9 </strong></th>
+    <td> <string.h> 참조자 </td>
+  </tr>
+  <tr>
+    <th><strong> Bank </strong></th>
+    <td> <string.h> C++ 장기 프로젝트 </td>
+  </tr>
 </table>
   
