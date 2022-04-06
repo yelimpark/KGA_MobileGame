@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f652d7d5-1aa6-4f32-b853-34e10d3e1119}</ProjectGuid>
-    <RootNamespace>Bank</RootNamespace>
+    <ProjectGuid>{c5186b51-486a-4b08-95bb-d23d22abf63d}</ProjectGuid>
+    <RootNamespace>Project10</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
-    <ClCompile Include="AccountHandler.cpp" />
+    <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NameCard.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Printer.cpp" />
+    <ClCompile Include="Ring.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h" />
-    <ClInclude Include="AccountHandler.h" />
+    <ClInclude Include="Calculator.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="NameCard.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Printer.h" />
+    <ClInclude Include="Ring.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

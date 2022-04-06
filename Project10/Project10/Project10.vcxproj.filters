@@ -18,18 +18,42 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Account.cpp">
+    <ClCompile Include="NameCard.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="AccountHandler.cpp">
+    <ClCompile Include="Point.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ring.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Printer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Account.h">
+    <ClInclude Include="NameCard.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="AccountHandler.h">
+    <ClInclude Include="Point.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Ring.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Calculator.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Printer.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
