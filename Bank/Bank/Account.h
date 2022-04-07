@@ -1,3 +1,5 @@
+#pragma once
+
 class Account {
 private:
 	const int bankAccountNumber;
@@ -5,15 +7,18 @@ private:
 	int balance;
 
 public:
+
 	Account(int bankAccountNumber, const char* name, int balance);
 	
-	int Deposit(int money);
+	virtual int Deposit(int money) = 0;
 
 	int Withdraw(int money);
 
-	void ShowAccountInfo() const;
+	virtual void ShowAccountInfo() const;
 
-	int GetBankAccountNumber();
+	int GetBankAccountNumber() const;
 
-	~Account();
+	int GetBalance() const;
+
+	virtual ~Account();
 };

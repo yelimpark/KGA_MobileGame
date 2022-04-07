@@ -1,4 +1,5 @@
-#include"Account.h"
+#include "HighCreditAccount.h"
+#include "NormalAccount.h"
 #include <cstdio>
 
 class AccountHandler {
@@ -9,7 +10,9 @@ private:
 public:
 	AccountHandler();
 
-	void MakeAccount();
+	void MakeAccount(int bankAccountNumber, const char* name, int balance, int interest);
+	
+	void MakeAccount(int bankAccountNumber, const char* name, int balance, int interest, int cradit);
 
 	int FindAccount(int bankAccountNumber);
 
@@ -19,7 +22,11 @@ public:
 
 	int SaveAccountFile();
 
-	void DepositAndWithdrawal(int sign);
+	int Deposit(int index, int money);
+
+	int Withdraw(int index, int money);
+
+	//void DepositAndWithdrawal(int sign);
 
 	~AccountHandler();
 };

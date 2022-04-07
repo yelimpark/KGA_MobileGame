@@ -13,39 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\account">
-      <UniqueIdentifier>{2afade44-5163-436f-9256-776595d8f852}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="AccountHandler.cpp">
+    <ClCompile Include="Employee.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Account.cpp">
-      <Filter>소스 파일\account</Filter>
+    <ClCompile Include="PermanentWorker.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="NormalAccount.cpp">
-      <Filter>소스 파일\account</Filter>
+    <ClCompile Include="TemporaryWorker.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="HighCreditAccount.cpp">
-      <Filter>소스 파일\account</Filter>
+    <ClCompile Include="SalesWorker.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EmployeeHandler.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ForeignSalesWorker.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HighCreditAccount.h">
-      <Filter>소스 파일\account</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountHandler.h">
+    <ClInclude Include="Employee.h">
       <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="NormalAccount.h">
-      <Filter>소스 파일\account</Filter>
+    <ClInclude Include="PermanentWorker.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Account.h">
-      <Filter>소스 파일\account</Filter>
+    <ClInclude Include="TemporaryWorker.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SalesWorker.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="EmployeeHandler.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ForeignSalesWorker.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
