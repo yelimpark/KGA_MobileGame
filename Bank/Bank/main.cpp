@@ -1,45 +1,40 @@
-#include <iostream>
 #include <cstdio>
 #include "AccountHandler.h"
-
-void PrintMenu() {
-	std::cout << "==Menu==" << std::endl;
-	std::cout << "1. 계좌개설" << std::endl;
-	std::cout << "2. 입 금" << std::endl;
-	std::cout << "3. 출 금" << std::endl;
-	std::cout << "4. 계좌정보 전체 출력" << std::endl;
-	std::cout << "5. 프로그램 종료" << std::endl;
-}
+#include "WithdrawException.h"
+#include "WrongMoney.h"
 
 int main(void) {
 	AccountHandler bank;
-	//if (bank.GetAccountFile() != 0) {
-	//	std::cout << "파일 오픈 실패! 프로그램을 종료합니다." << std::endl;
-	//	return 0;
-	//}
 
 	int menu = 0;
 	while (1) {
-		PrintMenu();
+		my::cout << "==Menu==" << my::endl;
+		my::cout << "1. 계좌개설" << my::endl;
+		my::cout << "2. 입 금" << my::endl;
+		my::cout << "3. 출 금" << my::endl;
+		my::cout << "4. 계좌정보 전체 출력" << my::endl;
+		my::cout << "5. 계좌 삭제" << my::endl;
+		my::cout << "6. 프로그램 종료" << my::endl;
 
-		std::cout << "선택 : ";
-		std::cin >> menu;
-		std::cout << std::endl;
+		my::cout << "선택 : ";
+		my::cin >> menu;
+		my::cout << my::endl;
 
 		switch (menu)
 		{
 		case 1: {
-			std::cout << "[계좌종류선택]" << std::endl;
-			std::cout << "1. 보통예금계좌" << std::endl;
-			std::cout << "2. 신용신뢰계좌" << std::endl;
+			my::cout << "[계좌종류선택]" << my::endl;
+			my::cout << "1. 보통예금계좌" << my::endl;
+			my::cout << "2. 신용신뢰계좌" << my::endl;
 
 			int accountType = 0;
-			std::cout << "선택: ";
-			std::cin >> accountType;
-			std::cout << std::endl;
+			my::cout << "선택: ";
+			my::cin >> accountType;
+			my::cout << my::endl;
 
 			if (accountType < 1 || 2 < accountType) {
-				std::cout << "잘못된 명령어 입니다." << std::endl << std::endl;
+				my::cout << "잘못된 명령어 입니다." << my::endl << my::endl;
+				my::cout << "다시 메뉴로 돌아갑니다." << my::endl << my::endl;
 				break;
 			}
 
@@ -49,83 +44,101 @@ int main(void) {
 			int interest = 0;
 
 			if (accountType == 1) {
-				std::cout << "[보통예금계좌개설]" << std::endl;
+				my::cout << "[보통예금계좌개설]" << my::endl;
 
 			}
 			else if (accountType == 2) {
-				std::cout << "[신용신뢰계좌개설]" << std::endl;
+				my::cout << "[신용신뢰계좌개설]" << my::endl;
 			}
 
-			std::cout << "계좌번호 : ";
-			std::cin >> bankAccountNumber;
-			std::cout << "이름 : ";
-			std::cin >> name;
-			std::cout << "입금액 : ";
-			std::cin >> balance;
-			std::cout << "이자율 : ";
-			std::cin >> interest;
+			my::cout << "계좌번호 : ";
+			my::cin >> bankAccountNumber;
+			my::cout << "이름 : ";
+			my::cin >> name;
+			my::cout << "입금액 : ";
+			my::cin >> balance;
+			my::cout << "이자율 : ";
+			my::cin >> interest;
 			
 			if (accountType == 1) {
-				std::cout << std::endl;
+				my::cout << my::endl;
 				bank.MakeAccount(bankAccountNumber, name, balance, interest);
 			}
 			else if (accountType == 2) {
 				int cradit = 0;
-				std::cout << "신용등급(1toA, 2toB, 3toC) : ";
-				std::cin >> cradit;
-				std::cout << std::endl;
+				my::cout << "신용등급(1toA, 2toB, 3toC) : ";
+				my::cin >> cradit;
+				my::cout << my::endl;
 				bank.MakeAccount(bankAccountNumber, name, balance, interest, cradit);
 			}
 
 			break;
 		}
 		case 2: {
-			std::cout << "[입 금]" << std::endl;
+			my::cout << "[입 금]" << my::endl;
 
 			int bankAccountNumber = 0;
-			std::cout << "계좌번호 : ";
-			std::cin >> bankAccountNumber;
+			my::cout << "계좌번호 : ";
+			my::cin >> bankAccountNumber;
 
 			int index = bank.FindAccount(bankAccountNumber);
 
 			if (index < 0) {
-				std::cout << "계좌 정보를 찾지 못했습니다." << std::endl;
-				std::cout << "다시 메뉴로 돌아갑니다." << std::endl << std::endl;
+				my::cout << "계좌 정보를 찾지 못했습니다." << my::endl;
+				my::cout << "다시 메뉴로 돌아갑니다." << my::endl << my::endl;
 				break;
 			}
 
 			int money = 0;
-			std::cout << "입금액 : ";
-			std::cin >> money;
+			
+			while (1) {
+				my::cout << "입금액 : ";
+				my::cin >> money;
 
-			bank.Deposit(index, money);
+				try {
+					bank.Deposit(index, money);
 
-			std::cout << "입금 완료" << std::endl << std::endl;
+					my::cout << "입금 완료" << my::endl << my::endl;
+					break;
+				}
+				catch (AccountException& expn) {
+					expn.ShowExceptionReason();
+				}
+			}
 			
 			break;
 		}
 		case 3: {
-			std::cout << "[출 금]" << std::endl;
+			my::cout << "[출 금]" << my::endl;
 
 			int bankAccountNumber = 0;
-			std::cout << "계좌번호 : ";
-			std::cin >> bankAccountNumber;
+			my::cout << "계좌번호 : ";
+			my::cin >> bankAccountNumber;
 
 			int index = bank.FindAccount(bankAccountNumber);
 
 			if (index < 0) {
-				std::cout << "계좌 정보를 찾지 못했습니다." << std::endl;
-				std::cout << "다시 메뉴로 돌아갑니다." << std::endl << std::endl;
+				my::cout << "계좌 정보를 찾지 못했습니다." << my::endl;
+				my::cout << "다시 메뉴로 돌아갑니다." << my::endl << my::endl;
 				break;
 			}
 
 			int money = 0;
-			std::cout << "출금액 : ";
-			std::cin >> money;
 
-			bank.Withdraw(index, money);
+			while (1) {
+				my::cout << "출금액 : ";
+				my::cin >> money;
 
-			std::cout << "출금 완료" << std::endl << std::endl;
+				try {
+					bank.Withdraw(index, money);
+					
+					my::cout << "출금 완료" << my::endl << my::endl;
+					break;
+				}
+				catch (AccountException& expn) {
+					expn.ShowExceptionReason();
+				}
+			}
 
 			break;
 		}
@@ -134,17 +147,36 @@ int main(void) {
 			break;
 		}
 
+		case 5: {
+			my::cout << "[계좌 삭제]" << my::endl;
+
+			int bankAccountNumber = 0;
+			my::cout << "계좌번호 : ";
+			my::cin >> bankAccountNumber;
+
+			int index = bank.FindAccount(bankAccountNumber);
+
+			if (index < 0) {
+				my::cout << "계좌 정보를 찾지 못했습니다." << my::endl;
+				my::cout << "다시 메뉴로 돌아갑니다." << my::endl << my::endl;
+				break;
+			}
+
+			bank.DeleteAccount(index);
+			my::cout << "삭제 완료" << my::endl << my::endl;
+
+			break;
+		}
+
 		default:
 			break;
 		}
 
-		if (menu == 5) break;
-		if (1 > menu || menu > 5)  std::cout << "잘못된 명령어 입니다." << std::endl << std::endl;
+		if (menu == 6) break;
+		if (1 > menu || menu > 6)  my::cout << "잘못된 명령어 입니다." << my::endl << my::endl;
 	}
 
-	//if (bank.SaveAccountFile() != 0) {
-	//	std::cout << "파일 저장 실패!" << std::endl;
-	//}
+	bank.releaseAccounts();
 
 	return 0;
 }

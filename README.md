@@ -37,19 +37,35 @@ repository for 경일게임아카데미 모바일게임개발자양성과정
   </tr>
   <tr>
     <th><strong> Project 9 </strong></th>
-    <td> <string.h> 참조자 </td>
+    <td> 참조자 </td>
   </tr>
   <tr>
     <th><strong> Project 10 </strong></th>
-    <td> <string.h> 클래스 </td>
+    <td> 클래스 </td>
   </tr>
   <tr>
     <th><strong> Project 11 </strong></th>
-    <td> <string.h> 상속 </td>
+    <td> 상속 </td>
   </tr>
   <tr>
     <th><strong> Project 12 </strong></th>
-    <td> <string.h> 가상함수 </td>
+    <td> 가상함수 </td>
+  </tr>
+  <tr>
+    <th><strong> Project 13 </strong></th>
+    <td> 오버로딩 </td>
+  </tr>
+  <tr>
+    <th><strong> Project 14 </strong></th>
+    <td> MyString </td>
+  </tr>
+  <tr>
+    <th><strong> Project 15 </strong></th>
+    <td> template </td>
+  </tr>
+  <tr>
+    <th><strong> Project 16 </strong></th>
+    <td> 예외 처리 </td>
   </tr>
   <tr>
     <th><strong> Bank </strong></th>

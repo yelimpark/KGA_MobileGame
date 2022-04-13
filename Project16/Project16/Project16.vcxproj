@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f652d7d5-1aa6-4f32-b853-34e10d3e1119}</ProjectGuid>
-    <RootNamespace>Bank</RootNamespace>
+    <ProjectGuid>{28f3f040-a910-4bf0-9afb-b74e31c28f69}</ProjectGuid>
+    <RootNamespace>Project16</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,29 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
-    <ClCompile Include="AccountHandler.cpp" />
-    <ClCompile Include="HighCreditAccount.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyIs.cpp" />
-    <ClCompile Include="MyOs.cpp" />
-    <ClCompile Include="MyString.cpp" />
-    <ClCompile Include="NormalAccount.cpp" />
-    <ClCompile Include="WithdrawException.cpp" />
-    <ClCompile Include="WrongMoney.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Account.h" />
-    <ClInclude Include="AccountException.h" />
-    <ClInclude Include="AccountHandler.h" />
-    <ClInclude Include="BoundCheckArray.h" />
-    <ClInclude Include="HighCreditAccount.h" />
-    <ClInclude Include="MyIs.h" />
-    <ClInclude Include="MyOs.h" />
-    <ClInclude Include="MyString.h" />
-    <ClInclude Include="NormalAccount.h" />
-    <ClInclude Include="WithdrawException.h" />
-    <ClInclude Include="WrongMoney.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

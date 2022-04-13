@@ -1,18 +1,21 @@
 #pragma once
+#include "MyString.h"
 
 class Account {
-private:
-	const int bankAccountNumber;
-	char * name;
+protected:
+	int bankAccountNumber;
+	my::string name;
 	int balance;
 
 public:
 
 	Account(int bankAccountNumber, const char* name, int balance);
 	
-	virtual int Deposit(int money) = 0;
+	Account(int bankAccountNumber, my::string name, int balance);
 
-	int Withdraw(int money);
+	virtual void Deposit(int money) = 0;
+
+	void Withdraw(int money);
 
 	virtual void ShowAccountInfo() const;
 

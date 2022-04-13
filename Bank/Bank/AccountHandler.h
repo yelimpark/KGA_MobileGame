@@ -1,10 +1,10 @@
-#include "HighCreditAccount.h"
-#include "NormalAccount.h"
+#pragma once
+#include "BoundCheckArray.h"
 #include <cstdio>
 
 class AccountHandler {
 private:
-	Account* accountArr[50];
+	BoundCheckArray<Account *> accountArr;
 	int accountArrMax;
 
 public:
@@ -13,18 +13,26 @@ public:
 	void MakeAccount(int bankAccountNumber, const char* name, int balance, int interest);
 	
 	void MakeAccount(int bankAccountNumber, const char* name, int balance, int interest, int cradit);
+	
+	void MakeAccount(int bankAccountNumber, my::string name, int balance, int interest);
 
-	int FindAccount(int bankAccountNumber);
+	void MakeAccount(int bankAccountNumber, my::string name, int balance, int interest, int cradit);
 
-	void ShowAccountsInfo();
+	void DeleteAccount(int index);
 
-	int GetAccountFile();
+	int FindAccount(int bankAccountNumber) const;
 
-	int SaveAccountFile();
+	void ShowAccountsInfo() const;
 
-	int Deposit(int index, int money);
+	void Deposit(int index, int money);
 
-	int Withdraw(int index, int money);
+	void Withdraw(int index, int money);
+
+	void releaseAccounts();
+
+	//int GetAccountFile();
+
+	//int SaveAccountFile();
 
 	//void DepositAndWithdrawal(int sign);
 

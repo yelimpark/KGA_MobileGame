@@ -1,44 +1,46 @@
 #include "Account.h"
-#include <iostream>
+#include "WithdrawException.h"
+#include "WrongMoney.h"
 
 Account::Account(int bankAccountNumber, const char* name, int balance)
-	:bankAccountNumber(bankAccountNumber), balance(balance)
+	:bankAccountNumber(bankAccountNumber), name(name), balance(balance)
 {
-	this->name = new char[strlen(name) + 1];
-	strcpy_s(this->name, strlen(name) + 1, name);
 }
 
-int Account::Deposit(int money)
+Account::Account(int bankAccountNumber, my::string name, int balance)
+	: bankAccountNumber(bankAccountNumber), name(name), balance(balance)
 {
-	if (money < 0) {
-		std::cout << "입금액이 올바르지 않습니다." << std::endl;
-		return -1;
-	}
 
-	balance += money;
-	return 0;
 }
 
-int Account::Withdraw(int money)
+//int Account::Deposit(int money)
+//{
+//	if (money < 0) {
+//		my::cout << "입금액이 올바르지 않습니다." << my::endl;
+//		return -1;
+//	}
+//
+//	balance += money;
+//	return 0;
+//}
+
+void Account::Withdraw(int money)
 {
 	if (money < 0) {
-		std::cout << "출금액이 올바르지 않습니다." << std::endl;
-		return -1;
+		throw WrongMoney(money);
 	}
 	if (money > balance) {
-		std::cout << "계좌의 잔액이 부족합니다." << std::endl;
-		return -1;
+		throw WithdrawException(balance);
 	}
 
 	balance -= money;
-	return 0;
 }
 
 void Account::ShowAccountInfo() const
 {
-	std::cout << "계좌번호 : " << bankAccountNumber << std::endl;
-	std::cout << "이 름 : " << name << std::endl;
-	std::cout << "잔 액 : " << balance << std::endl;
+	my::cout << "계좌번호 : " << bankAccountNumber << my::endl;
+	my::cout << "이 름 : " << name << my::endl;
+	my::cout << "잔 액 : " << balance << my::endl;
 }
 
 int Account::GetBankAccountNumber() const
@@ -53,5 +55,4 @@ int Account::GetBalance() const
 
 Account::~Account()
 {
-	delete []name;
 }

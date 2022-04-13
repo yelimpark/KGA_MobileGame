@@ -1,5 +1,6 @@
 #include "NormalAccount.h"
 #include <iostream>
+#include "WrongMoney.h"
 
 NormalAccount::NormalAccount(int bankAccountNumber, const char* name, int balance, int interest)
 	:Account(bankAccountNumber, name, balance), interest(interest)
@@ -7,12 +8,31 @@ NormalAccount::NormalAccount(int bankAccountNumber, const char* name, int balanc
 
 }
 
-int NormalAccount::Deposit(int money)
+NormalAccount::NormalAccount(int bankAccountNumber, my::string name, int balance, int interest)
+	: Account(bankAccountNumber, name, balance), interest(interest)
 {
-	int interestMoney = GetBalance() * interest * 0.01;
 
-	if (Account::Deposit(money + interestMoney) < 0) return -1;
-	return 0;
+}
+
+NormalAccount NormalAccount::operator=(const NormalAccount& ref)
+{
+	name = ref.name;
+	bankAccountNumber = ref.bankAccountNumber;
+	balance = ref.balance;
+	interest = ref.interest;
+
+	return *this;
+}
+
+void NormalAccount::Deposit(int money)
+{
+	if (money < 0) {
+		throw WrongMoney(money);
+	}
+
+	int interestMoney = balance * interest * 0.01;
+
+	balance += (money + interestMoney);
 }
 
 void NormalAccount::ShowAccountInfo() const

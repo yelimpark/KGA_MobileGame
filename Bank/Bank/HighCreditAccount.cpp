@@ -1,42 +1,76 @@
 #include "HighCreditAccount.h"
 #include <iostream>
+#include "WrongMoney.h"
 
-HighCreditAccount::HighCreditAccount(int bankAccountNumber, const char* name, int balance, int interest, int cradit)
-    :Account(bankAccountNumber, name, balance), interest(interest), cradit(cradit)
+HighCreditAccount::HighCreditAccount(int bankAccountNumber, const char* name, int balance, int interest, CRADIT_LEVEL cradit)
+    :NormalAccount(bankAccountNumber, name, balance, interest), cradit(cradit)
 {
 }
 
-int HighCreditAccount::Deposit(int money)
+HighCreditAccount::HighCreditAccount(int bankAccountNumber, my::string name, int balance, int interest, CRADIT_LEVEL cradit)
+	: NormalAccount(bankAccountNumber, name, balance, interest), cradit(cradit)
 {
+}
+
+HighCreditAccount HighCreditAccount::operator=(const HighCreditAccount& ref)
+{
+	name = ref.name;
+	bankAccountNumber = ref.bankAccountNumber;
+	balance = ref.balance;
+	interest = ref.interest;
+	cradit = ref.cradit;
+
+	return *this;
+}
+
+void HighCreditAccount::Deposit(int money)
+{
+	if (money < 0) {
+		throw WrongMoney(money);
+	}
+
 	int interestMoney = 0;
 
 	switch (cradit)
 	{
 	case CRADIT_LEVEL::A:
-		interestMoney = GetBalance()* (interest + 7) * 0.01;
+		interestMoney = balance * (interest + 7) * 0.01;
 		break;
 	
 	case CRADIT_LEVEL::B:
-		interestMoney = GetBalance() * (interest + 4) * 0.01;
+		interestMoney = balance * (interest + 4) * 0.01;
 		break;
 
 	case CRADIT_LEVEL::C:
-		interestMoney = GetBalance() * (interest + 2) * 0.01;
+		interestMoney = balance * (interest + 2) * 0.01;
 		break;
 	
 	default:
 		break;
-	} 
+	}
 
-	if (Account::Deposit(money + interestMoney) < 0) return -1;
-	return 0;
+	balance += (money + interestMoney);
 }
 
 void HighCreditAccount::ShowAccountInfo() const
 {
 	Account::ShowAccountInfo();
 	std::cout << "이자율: " << interest << std::endl;
-	std::cout << "신용등급(1toA, 2toB, 3toC): " << cradit << std::endl;
+	switch (cradit)
+	{
+	case CRADIT_LEVEL::A:
+		std::cout << "신용등급: A" << std::endl;
+		break;
+	case CRADIT_LEVEL::B:
+		std::cout << "신용등급: B" << std::endl;
+		break;
+	case CRADIT_LEVEL::C:
+		std::cout << "신용등급: C" << std::endl;
+		break;
+	default:
+		break;
+	}
+	
 	std::cout << std::endl;
 }
 

@@ -16,6 +16,12 @@
     <Filter Include="소스 파일\account">
       <UniqueIdentifier>{2afade44-5163-436f-9256-776595d8f852}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\myiostream">
+      <UniqueIdentifier>{49c137cb-9039-4c07-9be5-6474f36e21df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Exeption">
+      <UniqueIdentifier>{a5b0348e-25f4-4f76-9582-aa23d66a2fda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,6 +39,21 @@
     <ClCompile Include="HighCreditAccount.cpp">
       <Filter>소스 파일\account</Filter>
     </ClCompile>
+    <ClCompile Include="MyIs.cpp">
+      <Filter>소스 파일\myiostream</Filter>
+    </ClCompile>
+    <ClCompile Include="MyOs.cpp">
+      <Filter>소스 파일\myiostream</Filter>
+    </ClCompile>
+    <ClCompile Include="MyString.cpp">
+      <Filter>소스 파일\myiostream</Filter>
+    </ClCompile>
+    <ClCompile Include="WithdrawException.cpp">
+      <Filter>소스 파일\Exeption</Filter>
+    </ClCompile>
+    <ClCompile Include="WrongMoney.cpp">
+      <Filter>소스 파일\Exeption</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HighCreditAccount.h">
@@ -46,6 +67,27 @@
     </ClInclude>
     <ClInclude Include="Account.h">
       <Filter>소스 파일\account</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundCheckArray.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MyIs.h">
+      <Filter>소스 파일\myiostream</Filter>
+    </ClInclude>
+    <ClInclude Include="MyOs.h">
+      <Filter>소스 파일\myiostream</Filter>
+    </ClInclude>
+    <ClInclude Include="MyString.h">
+      <Filter>소스 파일\myiostream</Filter>
+    </ClInclude>
+    <ClInclude Include="WithdrawException.h">
+      <Filter>소스 파일\Exeption</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountException.h">
+      <Filter>소스 파일\Exeption</Filter>
+    </ClInclude>
+    <ClInclude Include="WrongMoney.h">
+      <Filter>소스 파일\Exeption</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

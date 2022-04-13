@@ -1,23 +1,24 @@
 #pragma once
-#include "Account.h"
+#include "NormalAccount.h"
 
-namespace CRADIT_LEVEL {
-	enum {
-		A = 1,
-		B,
-		C
-	};
-}
+enum class CRADIT_LEVEL {
+	A = 7,
+	B = 4,
+	C = 2
+};
 
-class HighCreditAccount : public Account {
+class HighCreditAccount : public NormalAccount {
 private:
-	int interest;
-	int cradit;
+	CRADIT_LEVEL cradit;
 
 public:
-	HighCreditAccount(int bankAccountNumber, const char* name, int balance, int interest, int cradit);
+	HighCreditAccount(int bankAccountNumber, const char* name, int balance, int interest, CRADIT_LEVEL cradit);
 
-	virtual int Deposit(int money);
+	HighCreditAccount(int bankAccountNumber, my::string name, int balance, int interest, CRADIT_LEVEL cradit);
+
+	HighCreditAccount operator=(const HighCreditAccount& ref);
+
+	virtual void Deposit(int money);
 
 	virtual void ShowAccountInfo() const;
 
