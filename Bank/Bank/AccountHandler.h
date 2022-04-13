@@ -30,11 +30,5 @@ public:
 
 	void releaseAccounts();
 
-	//int GetAccountFile();
-
-	//int SaveAccountFile();
-
-	//void DepositAndWithdrawal(int sign);
-
 	~AccountHandler();
 };
